@@ -1,18 +1,3 @@
-// 2
-type MyReturnType<T extends Function> = T extends (...args: any) => infer U
-    ? U
-    : never
-
-// 3
-type MyOmit<T, K extends keyof T> = {
-    [Key in keyof T as Key extends K ? never : Key]: T[Key]
-}
-
-// 4
-type MyPick<T, K extends keyof T> = {
-    [Key in K]: T[Key]
-}
-
 // 7
 type MyReadonly<T> = {
     readonly [K in keyof T]: T[K]
