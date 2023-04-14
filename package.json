@@ -1,0 +1,8 @@
+{
+    "name": "ts-challenges",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/nikola96gospodinov/ts-challenges.git",
+    "author": "Nikola Gospodinov",
+    "license": "MIT"
+}
