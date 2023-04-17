@@ -1,21 +1,3 @@
-type AppendArgument<Fn extends Function, NewArgument> = Fn extends (
-    ...args: infer Arguments
-) => infer ReturnValue
-    ? (...args: [...Arguments, NewArgument]) => ReturnValue
-    : Fn
-
-type If<C extends boolean, T, F> = C extends true ? T : F
-
-type StringToNumber<T extends string> = T extends `${infer Num extends number}`
-    ? Num
-    : T
-
-type FilterOut<T extends unknown[], F> = T extends [infer First, ...infer Rest]
-    ? [First] extends [F]
-        ? [...FilterOut<Rest, F>]
-        : [First, ...FilterOut<Rest, F>]
-    : []
-
 type Flatten<T extends unknown[]> = T extends [infer First, ...infer Rest]
     ? First extends unknown[]
         ? [...Flatten<First>, ...Flatten<Rest>]
